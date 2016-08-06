@@ -15,10 +15,7 @@
   package:
     name={{ item }}
     state=installed
-  with_items:
-    - openssh-server
-    - postfix
-    - curl
+  with_items: "{{ gitlab_dependencies }}"
   when: (ansible_os_family == 'RedHat') or (ansible_os_family == 'Debian')
 
 - name: Download GitLab repository installation script.
